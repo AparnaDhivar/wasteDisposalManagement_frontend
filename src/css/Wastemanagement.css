@@ -1,0 +1,39 @@
+.wm{
+    background-image: url(../images/BackgroundImg2.png);
+    background-size: 100%;
+    padding: 2rem;
+}
+
+.wm .heading{
+   
+    letter-spacing: normal;
+    line-height: 3rem;
+    text-shadow: 2px 2px #025224;
+    color: #025224;
+}
+
+.wm .divisions{
+    
+    padding: 2rem;
+}
+
+.wm .divisions .d1{
+   
+    margin: 1rem;
+    width: 50rem;
+    height: 15rem;
+    text-align: left;
+}
+
+.wm .divisions .d2{
+   
+    margin: 1rem;
+    width: 28rem;
+    height: 20rem;
+    text-align: left;
+}
+
+/* .wm .divisions .d1:hover{
+   box-shadow: 5px 5px 5px 5px #025224;
+   text-shadow: 2px 2px 5px black;
+} */

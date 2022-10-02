@@ -1,0 +1,32 @@
+.about{
+    background-image: url(../images/BackgroundImg1.png);
+    background-size: cover;
+    padding: 2rem;
+}
+
+.about .heading{
+    margin-left: 10rem;
+    letter-spacing: normal;
+    line-height: 3rem;
+    text-shadow: 2px 2px #025224;
+    color: #025224;
+}
+
+.about .divisions{
+    margin-left: 10rem;
+    padding: 2rem;
+}
+
+.about .divisions .d1{
+    border: 5px solid #025224;
+    border-radius: 25px;
+    margin: 1rem;
+    width: 29%;
+    height: 30%;
+    text-align: center;
+}
+
+.about .divisions .d1:hover{
+   box-shadow: 5px 5px 5px 5px #025224;
+   text-shadow: 2px 2px 5px black;
+}
