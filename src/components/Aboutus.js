@@ -4,7 +4,7 @@ import Col from 'react-bootstrap/Col';
 
 function Aboutus(props) {
     return (
-        <div className="about">
+        <div className="about" id='about'>
             <div className='heading'>
                 <h1><b>About Us</b></h1>
                 <h3>Start Trash & Recycling Pickup With Us Today</h3>

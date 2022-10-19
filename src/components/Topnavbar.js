@@ -1,9 +1,9 @@
 import {Container,Nav,Navbar} from 'react-bootstrap';
 import Navlinks from './Navlinks';
-import Aboutus from './Aboutus';
-import Wastemanagement from './Wastemanagement';
+
 import Businesspage from '../pages/Businesspage';
-import { Route,Routes } from "react-router-dom";
+import {Route,Routes} from "react-router-dom";
+import AnchorLink from "react-anchor-link-smooth-scroll";
 
 
 function Topnavbar(props) {
@@ -20,20 +20,23 @@ function Topnavbar(props) {
               alt="ODWD"
             />
         </Navbar.Brand>
-        <Navbar.Brand>OnDemandWasteDisposal</Navbar.Brand>
+       <Navbar.Brand>OnDemandWasteDisposal</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
          
           <Nav>
+          <AnchorLink href='#about'><Nav.Link>About us</Nav.Link></AnchorLink>
+          <AnchorLink href='#wastemanagement'><Nav.Link>Waste Management</Nav.Link></AnchorLink>
+          <AnchorLink href='#Contact'><Nav.Link>Contact us</Nav.Link></AnchorLink>
             <Navlinks />
           </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>
     <Routes>
-          <Route  path="/aboutus" element={<Aboutus />} />
-          <Route  path="/wastemanagement" element={<Wastemanagement />} />
-          <Route  path="/Businesspage" element={<Businesspage />}  />
+       
+    <Route path="/businesspage" element={<Businesspage/>} />
+          
     </Routes>
     </>
     

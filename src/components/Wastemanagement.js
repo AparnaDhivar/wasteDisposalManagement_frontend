@@ -4,7 +4,7 @@ import Col from 'react-bootstrap/Col';
 
 function Wastemanagement(props) {
     return (
-        <div className="wm">
+        <div className="wm" id='wastemanagement'>
             <div className='heading'>
                 <h1><b>Waste Management</b></h1>
 

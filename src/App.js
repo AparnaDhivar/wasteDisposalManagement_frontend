@@ -1,6 +1,8 @@
 import './App.css';
 import Frontpage from './pages/Frontpage';
-import { BrowserRouter,Routes,Route } from 'react-router-dom';
+
+import { BrowserRouter } from 'react-router-dom';
+
 
 function App() {
   return (
@@ -8,6 +10,7 @@ function App() {
     <BrowserRouter>
     <div>
      <Frontpage />
+    
     </div>
     </BrowserRouter>
     </>

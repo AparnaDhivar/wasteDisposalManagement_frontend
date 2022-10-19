@@ -4,10 +4,9 @@ import { Nav } from "react-bootstrap";
      return(
          <>
         
-         <Link to="/Aboutus" className="nav-link">About us</Link>
-        <Link to="/Wastemanagement" className="nav-link">Waste Management</Link>
-        <Link to="/Businesspage" className="nav-link">Business Page</Link>
         
+        <Link to="/businesspage" className="nav-link">Business Page</Link>
+        <Link to="/orderhere"></Link>
          </>
         
      )
