@@ -1,74 +1,108 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import '../css/Orderhere.css';
+import axios from "axios";
+import { useState } from 'react';
+
 
 function Orderhere() {
+    const [username, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [address, setAddress] = useState("");
+    const [phoneno, setPhone] = useState("");
+    const [shopno, setShop] = useState("One");
+    const [garbage, setGarbage] = useState("Scrapbooks and Papers");
+	
+	const handleSubmit= () => {
+		var data = {
+            "username": username,
+            "phoneno": phoneno,
+            "address": address,
+            "email": email,
+            "shopno": shopno,
+            "garbage": garbage
+          };
+          
+        
+          axios.post('http://127.0.0.1:8080/api/contact',data)
+          .then(response =>  alert(JSON.stringify(response.data)))
+          .catch(error => alert(error));
+
+		
+	  }
+
     return (
-        <Form id="Orderhere">
-            <h3>ORDER HERE</h3>
-            <Form.Group className="mb-3 p-2" controlId="formBasicName">
-                <Form.Label>UserName</Form.Label>
-                <Form.Control type="text" placeholder="UserName" />
-            </Form.Group>
+        <form id="Orderhere">
 
-            <Form.Group className="mb-3 p-2" controlId="formBasicEmail">
-                <Form.Label>Email address</Form.Label>
-                <Form.Control type="email" placeholder="Enter email" />
-                <Form.Text className="text-muted">
-                    We'll never share your email with anyone else.
-                </Form.Text>
-            </Form.Group>
+            <label>Enter your name:
+                <input
+                    type="text"
+                    value={username}
+                    onChange={(e) => setName(e.target.value)}
+                />
+            </label><br></br>
 
-            <Form.Group className="mb-3 p-2" controlId="formBasicAddress">
-                <Form.Label>Address</Form.Label>
-                <Form.Control type="textarea" placeholder="Building name,Room no,Streat,Near by,City,Pincode" />
-            </Form.Group>
+            <label>Enter your Email address:
+                <input
+                    type="text"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                />
+            </label><br></br>
 
-            <Form.Group className="mb-3 p-2" controlId="formBasicNumber">
-                <Form.Label>Phone Number</Form.Label>
-                <Form.Control type="number" placeholder="Phone Number" />
-            </Form.Group>
+            <label>Enter your Residental Address:
+                <input
+                    type="textarea"
+                    value={address}
+                    onChange={(e) => setAddress(e.target.value)}
+                />
+            </label><br></br>
 
-            <div class="mb-3 p-2">
-                <Form.Label>Shop No.</Form.Label>
-                <select class="form-select" aria-label="Default select example">
-                    <option selected>Open this select Shop No.</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                    <option value="4">Four</option>
-                    <option value="5">Five</option>
-                    <option value="6">Six</option>
-                    <option value="7">Seven</option>
-                    <option value="8">Eight</option>
-                    <option value="9">Nine</option>
+            <label>Enter your Phone No.:
+                <input
+                    type="text"
+                    value={phoneno}
+                    onChange={(e) => setPhone(e.target.value)}
+                />
+            </label><br></br>
 
+            <label>Enter your Shop No.:
+                <select class="form-select" aria-label="Default select example" value={shopno}
+                    onChange={(e) => setShop(e.target.value)} required>
+                    <option value="One">One</option>
+                    <option value="Two">Two</option>
+                    <option value="Three">Three</option>
+                    <option value="Four">Four</option>
+                    <option value="Five">Five</option>
+                    <option value="Six">Six</option>
+                    <option value="Seven">Seven</option>
+                    <option value="Eight">Eight</option>
+                    <option value="Nine">Nine</option>
                 </select>
-            </div>
+            </label><br></br>
 
-            <Form.Group className="mb-3 p-2" controlId="formBasicDetails">
-                <Form.Label>Garbage Details</Form.Label>
-                <select class="form-select" aria-label="Default select example">
-                    <option selected>Open this select Garbage Type.</option>
-                    <option value="1">Scrapbooks and Papers</option>
-                    <option value="2">Ewaste</option>
-                    <option value="3">Domestic waste</option>
-                    <option value="4">Newspapers</option>
-                    <option value="5">Vegetable waste</option>
-                    <option value="6">Bio medical waste</option>
-                    <option value="7">Plastic waste</option>
-                    <option value="8">Metals</option>
+            <label>Enter your Garbage Details:
+                <select class="form-select" aria-label="Default select example" value={garbage}
+                    onChange={(e) => setGarbage(e.target.value)} required>
+                    <option value="Scrapbooks and Papers">Scrapbooks and Papers</option>
+                    <option value="Ewaste">Ewaste</option>
+                    <option value="Domestic waste">Domestic waste</option>
+                    <option value="Newspapers">Newspapers</option>
+                    <option value="Vegetable waste">Vegetable waste</option>
+                    <option value="Bio medical waste">Bio medical waste</option>
+                    <option value="Plastic waste">Plastic waste</option>
+                    <option value="Metals">Metals</option>
                 </select>
-            </Form.Group>
+            </label><br></br>
 
-            <div className='p-3'>
-                <Button variant="success" type="submit">
-                    Submit
+           
+                <Button variant="success" type="button" value="submit"  onClick={()=>handleSubmit()} >
+                     Submit
                 </Button>
-            </div>
-        </Form>
-    );
+             
 
+        </form>
+    )
 }
 
 export default Orderhere;

@@ -1,7 +1,7 @@
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Orderhere from './Orderhere'
-import AnchorLink from "react-anchor-link-smooth-scroll";
+import Button from 'react-bootstrap/Button';
 
 function Productcards(props) {
   return (
@@ -11,6 +11,8 @@ function Productcards(props) {
         <Card.Title>{props.title}</Card.Title>
         <Card.Text>
          {props.add}
+         <br></br>
+         Contact No.- +91 88589*****
         </Card.Text>
       </Card.Body>
       <ListGroup className="list-group-flush">
@@ -19,7 +21,9 @@ function Productcards(props) {
         <ListGroup.Item>{props.g3}</ListGroup.Item>
       </ListGroup>
       <Card.Body>
-      <AnchorLink href='#Orderhere'>Order Here</AnchorLink>
+      <Button variant="primary" onClick={props.onclick}>
+        Order Here
+      </Button>
         
       </Card.Body>
     </Card>

@@ -48,7 +48,7 @@ function Wastemanagement(props) {
                     </Col>
                     <Col md="5" className='d2'>
                         <h4><b>Wet Waste</b></h4>
-                        <img src={props.TP}></img>
+                     
                         <p>Wet waste or organic waste such as Vegetable peels, food leftovers,
                             etc., constitute about 50% of the overall waste stream. Dumping of
                             Organic wastes at landfills leads to formation of noxious fumes that
